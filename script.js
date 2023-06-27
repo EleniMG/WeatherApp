@@ -7,4 +7,4 @@ async function getWeatherData(city) {
 
 }
 
-getWeatherData()
+console.log(getWeatherData('london'))
