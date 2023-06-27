@@ -7,4 +7,8 @@ async function getWeatherData(city) {
 
 }
 
+const locationToSearch = document.getElementById(location)
+console.log(locationToSearch)
+
+
 console.log(getWeatherData('london'))
