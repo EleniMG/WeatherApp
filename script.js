@@ -3,7 +3,10 @@ async function getWeatherData(city) {
     const jsonData = response.json()
     const tempC = await jsonData.then(res => res.current.temp_c)
     const tempF = await jsonData.then(res => res.current.temp_f)
-    return {tempC, tempF}
+    const weatherCondition = await jsonData.then(res => res.current.condition.text)
+    const locationName = await jsonData.then(res => res.location.name)
+    const locationCountry = await jsonData.then(res => res.location.country)
+    return {tempC, tempF, weatherCondition, locationName, locationCountry}
 }
 
 async function locationToSearch(event){
@@ -11,8 +14,16 @@ async function locationToSearch(event){
     const value = document.getElementById('location').value
     const currentTemperatureC = (await getWeatherData(value)).tempC
     const currentTemperatureF = (await getWeatherData(value)).tempF
-    document.getElementById("search-results").innerHTML = "The current temperature is " + currentTemperatureC +"°C" + " and for my North American friends, " + currentTemperatureF + "°F." 
-}
+
+    const weatherConditionToDisplay = (await getWeatherData(value)).weatherCondition
+
+    const areaName = (await getWeatherData(value)).locationName
+    const countryName = (await getWeatherData(value)).locationCountry
+
+    document.getElementById("search-results").innerHTML = "The current temperature is " + currentTemperatureC + "°C " + "and for my North American friends, " + currentTemperatureF + "°F in " + areaName + ", " + countryName + ". " + "The weather is currently " + weatherConditionToDisplay + ". "
+    }
+
 
 
 document.getElementById('submit').addEventListener('click', locationToSearch)
+
