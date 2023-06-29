@@ -16,4 +16,3 @@ async function locationToSearch(event){
 
 
 document.getElementById('submit').addEventListener('click', locationToSearch)
-
