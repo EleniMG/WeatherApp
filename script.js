@@ -15,13 +15,16 @@ async function locationToSearch(event){
     const currentTemperatureC = (await getWeatherData(value)).tempC
     const currentTemperatureF = (await getWeatherData(value)).tempF
 
-    const weatherConditionToDisplay = (await getWeatherData(value)).weatherCondition
+    const weatherConditionToDisplay = (await getWeatherData(value)).weatherCondition.toLowerCase()
 
     const areaName = (await getWeatherData(value)).locationName
     const countryName = (await getWeatherData(value)).locationCountry
 
     document.getElementById("search-results").innerHTML = "The current temperature is " + currentTemperatureC + "°C " + "and for my North American friends, " + currentTemperatureF + "°F in " + areaName + ", " + countryName + ". " + "The weather is currently " + weatherConditionToDisplay + ". "
-    }
+    
+    // if (weatherCondition === "Sunny")
+
+}
 
 
 
