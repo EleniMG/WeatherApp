@@ -16,6 +16,7 @@ h1{
     font-family: 'Audiowide';
     font-size: 3em;
     margin-top: 0;
+    animation: 0.5s linear slideInFromTop;
 }
 
 #search-results {
@@ -36,4 +37,14 @@ button{
     border-radius: 5px;
     font-size: 1em;
     font-family: 'Quicksand';
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50vh);
+
+    }
+    to {
+        transform: translateY(0vh);
+    }
 }
