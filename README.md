@@ -28,3 +28,4 @@
 ### Improvements to be made:
 - Applying different styles/sizes for different device sizes using @media
 - Adding more icons for different weather results e.g. clear
+- Including a drop down list for the user to select a location from when user types something in the search box
