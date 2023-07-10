@@ -21,6 +21,7 @@
 - Inserting and editing SVGs based on the outcome of the user's input
 - Replacing the result if the user searches for more than one location
 - Using custom downloadable fonts
+- Using event listeners
    
 
 
